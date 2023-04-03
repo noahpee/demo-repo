@@ -8,7 +8,7 @@ let product = 1
 
 let productAnswer = 'The product of '
 
-let dickAnswer = ''
+let altAnswer = ''
 
 /////////////////////////////////////
 /* Problem 1 (this is your demo that we'll solve in class)
@@ -25,7 +25,7 @@ function sum(a, b) {
 
     sumAnswer = 'The sum of '
 
-    dickAnswer = ''
+    altAnswer = ''
 
     for (let i = 0; i < arguments.length; i++) {
 
@@ -35,13 +35,13 @@ function sum(a, b) {
 
             sumAnswer += arguments[i] + ' and '
 
-            dickAnswer += arguments[i] + ' and '
+            altAnswer += arguments[i] + ' and '
 
         } else {
 
             sumAnswer += arguments[i] + ' is ' + sums + '.'
 
-            dickAnswer += arguments[i] + ' sum to ' + sums + '.'
+            altAnswer += arguments[i] + ' sum to ' + sums + '.'
 
 
         }
@@ -109,23 +109,14 @@ Fourth element: "The product of 4 and 7 and 5 is 140."
 IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this function. To do addition, use your sum() function, and to do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
-
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
 
-    let testArray = []
+    sum(...arguments)
 
-    for (let i = 0; i < arguments.length; i++) {
+    multiply(...arguments)    
 
-    testArray.push(arguments[i])
-
-    }
-
-    sum(...testArray)
-
-    multiply(...testArray)
-
-    return [sums, product, dickAnswer, productAnswer]
+    return [sums, product, altAnswer, productAnswer]
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -148,19 +139,19 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
 
-    sum(...testArray)
+    sum(...sumArr)
 
     let testString = ''
 
-    for (let i = 0; i < testArray.length; i++) {
+    for (let i = 0; i < sumArr.length; i++) {
 
-        if (i != testArray.length -1) {
+        if (i != sumArr.length -1) {
 
-            testString += testArray[i] + ','
+            testString += sumArr[i] + ','
 
         } else {
 
-            testString += testArray[i] + ' '
+            testString += sumArr[i] + ' '
 
         }
 
@@ -189,19 +180,19 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
-    multiply(...testArray)
+    multiply(...multArr)
 
     let testString = ''
 
-    for (let i = 0; i < testArray.length; i++) {
+    for (let i = 0; i < multArr.length; i++) {
 
-        if (i != testArray.length -1) {
+        if (i != multArr.length -1) {
 
-            testString += testArray[i] + ','
+            testString += multArr[i] + ','
 
         } else {
 
-            testString += testArray[i] + ' '
+            testString += multArr[i] + ' '
 
         }
 
@@ -239,19 +230,19 @@ let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
-    multiply(...testDynamicArray)
+    multiply(...dynamicArray)
 
     let testString = ''
 
-    for (let i = 0; i < testDynamicArray.length; i++) {
+    for (let i = 0; i < dynamicArray.length; i++) {
 
-        if (i != testDynamicArray.length -1) {
+        if (i != dynamicArray.length -1) {
 
-            testString += testDynamicArray[i] + ','
+            testString += dynamicArray[i] + ','
 
         } else {
 
-            testString += testDynamicArray[i] + ' '
+            testString += dynamicArray[i] + ' '
 
         }
 
