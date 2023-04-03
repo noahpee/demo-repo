@@ -10,7 +10,6 @@ let productAnswer = 'The product of '
 
 let dickAnswer = ''
 
-
 /////////////////////////////////////
 /* Problem 1 (this is your demo that we'll solve in class)
 Write a function called sum() that takes in two numbers as arguments and then returns an array where the first element is the sum of those numbers, and the second element is a concatenated string that EXACTLY follows this example and uses the values that were input into the function:
@@ -90,7 +89,7 @@ function multiply(a, b) {
         }
 
     }
-    
+
     return [product, productAnswer]
 
 }
@@ -169,7 +168,6 @@ function sumArray(sumArr) { //eslint-disable-line
 
     return[sums,testString + 'was passed in as an array of numbers, and ' + sums + ' is their sum.']
 
-
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -208,6 +206,8 @@ function multiplyArray(multArr) { //eslint-disable-line
         }
 
     }
+
+    console.log(product,'The numbers ' + testString + 'have a product of ' + product + '.')
 
     return[product,'The numbers ' + testString + 'have a product of ' + product + '.']
     
@@ -256,6 +256,8 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
         }
 
     }
+
+    console.log(product,'The numbers ' + testString + 'have a product of ' + product + '.')
 
     return[product,'The numbers ' + testString + 'have a product of ' + product + '.']
 
