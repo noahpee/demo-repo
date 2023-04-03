@@ -1,13 +1,10 @@
 'use strict';
 
 let sums = 0
-
-let sumAnswer = 'The sum of '
-
 let product = 1
 
+let sumAnswer = 'The sum of '
 let productAnswer = 'The product of '
-
 let altAnswer = ''
 
 /////////////////////////////////////
@@ -22,34 +19,20 @@ Test this function by hand in the console to get it working, and when you think 
 function sum(a, b) { 
 
     sums = 0
-
     sumAnswer = 'The sum of '
-
     altAnswer = ''
 
     for (let i = 0; i < arguments.length; i++) {
-
         sums += arguments[i]
-
         if (i != arguments.length -1) {
-
             sumAnswer += arguments[i] + ' and '
-
             altAnswer += arguments[i] + ' and '
-
         } else {
-
             sumAnswer += arguments[i] + ' is ' + sums + '.'
-
             altAnswer += arguments[i] + ' sum to ' + sums + '.'
-
-
         }
-
     }
-
     return [sums, sumAnswer]
-
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -71,27 +54,17 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { 
 
     product = 1
-
     productAnswer = 'The product of '
 
     for (let i = 0; i < arguments.length; i++) {
-
         product = product *= arguments[i]
-
         if (i != arguments.length -1) {
-
             productAnswer += arguments[i] + ' and '
-
         } else {
-
             productAnswer += arguments[i] + ' is ' + product + '.'
-
         }
-
     }
-
     return [product, productAnswer]
-
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -113,7 +86,6 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
 
     sum(...arguments)
-
     multiply(...arguments)    
 
     return [sums, product, altAnswer, productAnswer]
@@ -144,21 +116,13 @@ function sumArray(sumArr) { //eslint-disable-line
     let testString = ''
 
     for (let i = 0; i < sumArr.length; i++) {
-
         if (i != sumArr.length -1) {
-
             testString += sumArr[i] + ','
-
         } else {
-
             testString += sumArr[i] + ' '
-
         }
-
     }
-
     return[sums,testString + 'was passed in as an array of numbers, and ' + sums + ' is their sum.']
-
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -185,17 +149,11 @@ function multiplyArray(multArr) { //eslint-disable-line
     let testString = ''
 
     for (let i = 0; i < multArr.length; i++) {
-
         if (i != multArr.length -1) {
-
             testString += multArr[i] + ','
-
         } else {
-
             testString += multArr[i] + ' '
-
         }
-
     }
 
     console.log(product,'The numbers ' + testString + 'have a product of ' + product + '.')
@@ -235,17 +193,11 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
     let testString = ''
 
     for (let i = 0; i < dynamicArray.length; i++) {
-
         if (i != dynamicArray.length -1) {
-
             testString += dynamicArray[i] + ','
-
         } else {
-
             testString += dynamicArray[i] + ' '
-
         }
-
     }
 
     console.log(product,'The numbers ' + testString + 'have a product of ' + product + '.')
