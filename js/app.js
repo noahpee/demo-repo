@@ -1,4 +1,16 @@
 'use strict';
+
+let sums = 0
+
+let sumAnswer = 'The sum of '
+
+let product = 1
+
+let productAnswer = 'The product of '
+
+let dickAnswer = ''
+
+
 /////////////////////////////////////
 /* Problem 1 (this is your demo that we'll solve in class)
 Write a function called sum() that takes in two numbers as arguments and then returns an array where the first element is the sum of those numbers, and the second element is a concatenated string that EXACTLY follows this example and uses the values that were input into the function:
@@ -10,38 +22,34 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sum(a, b) { 
 
-    const array1 =[]
+    sums = 0
 
-    const initialValue = 0;
+    sumAnswer = 'The sum of '
 
-    let sum = 0
-
-    let sumAnswer = 'The sum of '
+    dickAnswer = ''
 
     for (let i = 0; i < arguments.length; i++) {
 
-        array1.push(arguments[i])
-
-        sum += arguments[i]
+        sums += arguments[i]
 
         if (i != arguments.length -1) {
 
             sumAnswer += arguments[i] + ' and '
 
+            dickAnswer += arguments[i] + ' and '
+
         } else {
 
-            sumAnswer += arguments[i] + ' is ' + sum + '.'
+            sumAnswer += arguments[i] + ' is ' + sums + '.'
+
+            dickAnswer += arguments[i] + ' sum to ' + sums + '.'
+
 
         }
 
     }
-    
-    const sumWithInitial = array1.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
 
-    console.log(sumWithInitial, sumAnswer);
-
-    return sum
-
+    return [sums, sumAnswer]
 
 }
 
@@ -63,38 +71,27 @@ Test this function by hand in the console to get it working, and when you think 
 
 function multiply(a, b) { 
 
-    const array1 =[]
+    product = 1
 
-    const initialValue = 1;
-
-    let sum = 1
-
-    let sumAnswer = 'The product of '
+    productAnswer = 'The product of '
 
     for (let i = 0; i < arguments.length; i++) {
 
-        array1.push(arguments[i])
-
-        sum = sum *= arguments[i]
+        product = product *= arguments[i]
 
         if (i != arguments.length -1) {
 
-            sumAnswer += arguments[i] + ' and '
+            productAnswer += arguments[i] + ' and '
 
         } else {
 
-            sumAnswer += arguments[i] + ' is ' + sum + '.'
+            productAnswer += arguments[i] + ' is ' + product + '.'
 
         }
 
     }
     
-    const sumWithInitial = array1.reduce((accumulator, currentValue) => accumulator * currentValue, initialValue);
-
-    console.log(sumWithInitial, sumAnswer);
-
-    return multiply
-
+    return [product, productAnswer]
 
 }
 
@@ -121,15 +118,15 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
 
     for (let i = 0; i < arguments.length; i++) {
 
-    sum.push(arguments[i])
-
-    console.log(testArray)
+    testArray.push(arguments[i])
 
     }
 
-    sum()
+    sum(...testArray)
 
-    return sumAndMultiply
+    multiply(...testArray)
+
+    return [sums, product, dickAnswer, productAnswer]
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -152,11 +149,32 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
 
+    sum(...testArray)
+
+    let testString = ''
+
+    for (let i = 0; i < testArray.length; i++) {
+
+        if (i != testArray.length -1) {
+
+            testString += testArray[i] + ','
+
+        } else {
+
+            testString += testArray[i] + ' '
+
+        }
+
+    }
+
+    return[sums,testString + 'was passed in as an array of numbers, and ' + sums + ' is their sum.']
+
+
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -173,10 +191,30 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
+    multiply(...testArray)
+
+    let testString = ''
+
+    for (let i = 0; i < testArray.length; i++) {
+
+        if (i != testArray.length -1) {
+
+            testString += testArray[i] + ','
+
+        } else {
+
+            testString += testArray[i] + ' '
+
+        }
+
+    }
+
+    return[product,'The numbers ' + testString + 'have a product of ' + product + '.']
+    
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+ testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -201,9 +239,29 @@ let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
+    multiply(...testDynamicArray)
+
+    let testString = ''
+
+    for (let i = 0; i < testDynamicArray.length; i++) {
+
+        if (i != testDynamicArray.length -1) {
+
+            testString += testDynamicArray[i] + ','
+
+        } else {
+
+            testString += testDynamicArray[i] + ' '
+
+        }
+
+    }
+
+    return[product,'The numbers ' + testString + 'have a product of ' + product + '.']
+
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+ testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
